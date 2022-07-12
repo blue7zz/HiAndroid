@@ -7,13 +7,13 @@ import java.util.Random;
  *
  */
 public class Deal {
-    private int multiple = 5;                           //倍数默认1倍
+    private int multiple = 1;                           //倍数默认1倍
     private double winRate = 0.5;                       //胜率
     private double serviceChargeSum = 0;                //模拟盈亏比，次数
     private int simulateCount = 100;                    //默认100次
     private double moneyCount = 10;                   //总钱数
     private double moneyCountImmobilization = 0;        //总钱数
-    private double serviceCharge = 0.0005;              //手续费
+    private double serviceCharge = 0.0000;              //手续费
     private boolean immobilization = false;             //true固定 false不固定
     private Random random = new Random();               //随机数
     private double winProportion = 1.5;                 //赢比
@@ -201,7 +201,7 @@ public class Deal {
             recordLoseMoney = 0; //记录亏钱
             recordServiceCharge = 0; //记录手续费
             moneyCountImmobilization = 0;
-             bean = new DealBean();
+            bean = new DealBean();
 
             for (int i = 1; i <= simulateCount; i++) {
                 //买入手续费 本金 * 手续费 * 倍数
@@ -221,7 +221,7 @@ public class Deal {
                     }
                     recordWinMoney = recordWinMoney + winMoneyNum;
                     recordServiceCharge = recordServiceCharge + buyServiceCharge + sellServiceCharge;
-                    bean.getRe().add("赚钱"+recordWinMoney+" 总资金"+moneyCount + "\n");
+                    bean.getRe().add("赚钱" + recordWinMoney + " 总资金" + moneyCount + "\n");
 
                 } else {
                     loseMoneyCount++;
@@ -240,8 +240,7 @@ public class Deal {
                     recordLoseMoney = recordLoseMoney + loseMoneyNum;
                     recordServiceCharge = recordServiceCharge + buyServiceCharge + sellServiceCharge;
 
-
-                    bean.getRe().add("亏钱"+loseMoneyNum+" 总资金"+moneyCount +"\n");
+                    bean.getRe().add("亏钱" + loseMoneyNum + " 总资金" + moneyCount + "\n");
                 }
             }
             if (winMoneyCount == winRate * 100) {
@@ -272,6 +271,7 @@ public class Deal {
 
         bean.setRecordWinMoney(recordWinMoney);
         bean.setRecordLoseMoney(recordLoseMoney);
+        bean.setRecordServiceCharge(recordServiceCharge);
 
         log("\n\n\n\n\n\n");
         return bean;
@@ -286,7 +286,7 @@ public class Deal {
      */
     public boolean isSuccess() {
         int sj = random.nextInt(100) + 1;
-        if (100-(winRate * 100) < sj) {
+        if (100 - (winRate * 100) < sj) {
             return true;
         } else {
             return false;
