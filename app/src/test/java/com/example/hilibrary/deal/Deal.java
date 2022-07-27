@@ -1,4 +1,4 @@
-package com.example.hilibrary;
+package com.example.hilibrary.deal;
 
 
 import java.util.Random;
