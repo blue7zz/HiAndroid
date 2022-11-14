@@ -1,4 +1,4 @@
-rootProject.name = "Hilibrary"
+rootProject.name = "HiAndroid"
 include ':app'
 include ':mylibrary'
 include ':hiui'
