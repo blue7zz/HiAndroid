@@ -22,7 +22,6 @@ import java.util.TreeMap;
 public class HashMapDemo {
     private void hashMapTest() {
         HashMap hash = new HashMap();
-
         TreeMap tree = new TreeMap();
 
     }
@@ -57,7 +56,6 @@ public class HashMapDemo {
         //                return e;
         //            // 否则，把当前节点的下一个节点拿出来继续寻找
         //        } while ((e = e.next) != null);
-
     }
 
 

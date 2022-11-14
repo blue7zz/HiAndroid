@@ -55,7 +55,6 @@ public class LinkedListDemo<E> {
         }
         size++;
         modCount++;
-
     }
     //删除 - 从头部删除，从尾部删除
     //从头部删除
