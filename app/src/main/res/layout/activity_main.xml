@@ -16,30 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <!--android:name 属性包含NavHost实现的类名称-->
 
-    <!--android:navGraph 属性将NavHostFragment与导航图相关联。
-    导航图会在此NavHostFragment中指定用户可以导航到的所有目的地-->
-
-    <!--app:defaultNavHost="true"属性确保NavHostFragment会拦截系统返回键。-->
-    <!--只能有一个默认NavHost,如果同一布局中有多个托管容器，请无比指定一个默认NavHost-->
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/cardview_dark_background"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_navigation"
-        app:layout_constraintVertical_bias="0.0"
-        app:navGraph="@navigation/nav_graph">
-
-    </androidx.fragment.app.FragmentContainerView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
