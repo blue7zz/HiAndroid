@@ -30,10 +30,12 @@ class DrawerLayoutActivity:AppCompatActivity() {
         //绑定后，系统会默认处理ActionBar左上角区域，为你添加返回按钮，将所切换到的Fragment在导航图里的name属性中的内容显示到Title
         //.setDrawerLayout(drawerLayout)后才会出现菜单按钮
         appBarConfiguration = AppBarConfiguration.Builder(navController.graph).setDrawerLayout(drawerLayout).build()
+        //和抽屉菜单进行绑定
         setupActionBarWithNavController(navController,appBarConfiguration)
 
         //设置左侧菜单
         var navigationView = dataBinding.navigationView
+        //绑定左侧回退按钮，堆栈
         NavigationUI.setupWithNavController(navigationView,navController)
 
         navController.addOnDestinationChangedListener { _, _, _ ->
