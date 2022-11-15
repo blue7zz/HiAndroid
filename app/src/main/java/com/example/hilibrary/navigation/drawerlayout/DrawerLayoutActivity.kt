@@ -13,11 +13,13 @@ import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.hilibrary.R
 import com.example.hilibrary.databinding.ActivityDrawerLayoutBinding
+import com.example.nav_annotation.Destination
 
-class DrawerLayoutActivity:AppCompatActivity() {
-    lateinit var dataBinding:ActivityDrawerLayoutBinding
+@Destination(pageUrl = "main/tabs/drawerlayout", asStarter = false)
+class DrawerLayoutActivity : AppCompatActivity() {
+    lateinit var dataBinding: ActivityDrawerLayoutBinding
 
-    lateinit var appBarConfiguration:AppBarConfiguration
+    lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dataBinding = ActivityDrawerLayoutBinding.inflate(layoutInflater);
@@ -29,14 +31,15 @@ class DrawerLayoutActivity:AppCompatActivity() {
         //绑定当前的ActionBar，除此之外NavigationUI还能绑定Toolbar和CollapsingToolbarLayout
         //绑定后，系统会默认处理ActionBar左上角区域，为你添加返回按钮，将所切换到的Fragment在导航图里的name属性中的内容显示到Title
         //.setDrawerLayout(drawerLayout)后才会出现菜单按钮
-        appBarConfiguration = AppBarConfiguration.Builder(navController.graph).setDrawerLayout(drawerLayout).build()
+        appBarConfiguration =
+            AppBarConfiguration.Builder(navController.graph).setDrawerLayout(drawerLayout).build()
         //和抽屉菜单进行绑定
-        setupActionBarWithNavController(navController,appBarConfiguration)
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
         //设置左侧菜单
         var navigationView = dataBinding.navigationView
         //绑定左侧回退按钮，堆栈
-        NavigationUI.setupWithNavController(navigationView,navController)
+        NavigationUI.setupWithNavController(navigationView, navController)
         navController.addOnDestinationChangedListener { _, _, _ ->
             Toast.makeText(
                 this@DrawerLayoutActivity,

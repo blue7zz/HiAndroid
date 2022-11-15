@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.hilibrary.R;
+import com.example.nav_annotation.Destination;
 
 
+@Destination(pageUrl = "main/tabs/DrawerLayoutSettingsFragment", asStarter = false)
 public class DrawerLayoutSettingsFragment extends Fragment
 {
     @Override

@@ -2,3 +2,5 @@ rootProject.name = "HiAndroid"
 include ':app'
 include ':mylibrary'
 include ':hiui'
+include ':nav-annotation'
+include ':nav-compiler'
