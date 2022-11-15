@@ -13,9 +13,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
 import androidx.navigation.NavGraphNavigator;
 import androidx.navigation.NavigatorProvider;
-import androidx.navigation.compose.DialogNavigator;
 import androidx.navigation.fragment.DialogFragmentNavigator;
-import androidx.navigation.fragment.FragmentNavigator;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
@@ -84,6 +82,9 @@ public class NavUtil {
         NavGraphNavigator graphNavigator = provider.getNavigator(NavGraphNavigator.class);
         NavGraph navGraph = new NavGraph(graphNavigator);
 
+        MyFragmentNavigator hiFragmentNavigator = new MyFragmentNavigator(activity,childFm,containerId);
+        provider.addNavigator(hiFragmentNavigator);
+
         while (iterator.hasNext()) {
             Destination destination = iterator.next();
             if (destination.destType.equals("activity")) {
@@ -93,8 +94,8 @@ public class NavUtil {
                 node.setComponentName(new ComponentName(activity.getPackageName(), destination.clazName));
                 navGraph.addDestination(node);
             } else if (destination.destType.equals("fragment")) {
-                FragmentNavigator navigator = provider.getNavigator(FragmentNavigator.class);
-                FragmentNavigator.Destination node = navigator.createDestination();
+//                MyFragmentNavigator navigator = provider.getNavigator(MyFragmentNavigator.class);
+                MyFragmentNavigator.Destination node = hiFragmentNavigator.createDestination();
                 node.setId(destination.id);
                 node.setClassName(destination.clazName);
                 navGraph.addDestination(node);

@@ -2,7 +2,7 @@ package com.example.hilibrary.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.hilibrary.R
 import com.example.hilibrary.databinding.ActivityNavigationBinding
@@ -19,6 +19,8 @@ import com.example.hilibrary.databinding.ActivityNavigationBinding
 class NavigationActivity : AppCompatActivity() {
 
     lateinit var dataBinding: ActivityNavigationBinding
+    lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dataBinding = ActivityNavigationBinding.inflate(layoutInflater)
@@ -27,11 +29,16 @@ class NavigationActivity : AppCompatActivity() {
 
         //dataBinding.btnBtn.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_bottomNavigationBarActivity))
 
-        val navController = findNavController(R.id.nav_host_fragment)
-        val hostFragment= supportFragmentManager.findFragmentById(R.id.nav_host_fragment);
+        navController = findNavController(R.id.nav_host_fragment)
+        val hostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment);
 
         //配置导航图
-        NavUtil.builderNavGraph(this,hostFragment!!.childFragmentManager,navController,R.id.nav_host_fragment);
+        NavUtil.builderNavGraph(
+            this,
+            hostFragment!!.childFragmentManager,
+            navController,
+            R.id.nav_host_fragment
+        );
         NavUtil.builderBottomBar(dataBinding.navView);
 
         dataBinding.navView.setOnNavigationItemSelectedListener { item ->
@@ -41,6 +48,21 @@ class NavigationActivity : AppCompatActivity() {
 
 
 
+//        FragmentNavigator
+        //将navController和BottomNavigationView绑定，形成联动效果
+        //navView.setupWithNavController(navController)
+        //navController!!.navigate(R.id.navigation_notifications)
+        //navController!!.navigate(R.id.navigation_notifications, Bundle.EMPTY)
+        //navController!!.navigate(Uri.parse("www.imooc.com"))
+        //
+        //navController!!.navigateUp()
+        //navController!!.popBackStack(R.id.navigation_dashboard,false)
+    }
+
+    override fun onBackPressed() {
+//        super.onBackPressed()
+//        navController.popBackStack()
+        finish()
 
     }
 }
