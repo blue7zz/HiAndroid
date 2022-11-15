@@ -76,6 +76,7 @@ dependencies {
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     // Jetpack Compose Integration
     implementation "androidx.navigation:navigation-compose:$nav_version"
+    implementation 'com.alibaba:fastjson:1.2.68'
 
     api project(':nav-annotation')
     kapt project(':nav-compiler')

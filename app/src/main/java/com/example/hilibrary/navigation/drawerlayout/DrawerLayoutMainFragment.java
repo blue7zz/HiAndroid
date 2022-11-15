@@ -11,7 +11,7 @@ import com.example.hilibrary.R;
 import com.example.nav_annotation.Destination;
 
 
-@Destination(pageUrl = "main/tabs/DrawerLayoutMainFragment", asStarter = false)
+@Destination(pageUrl = "main/tabs/DrawerLayoutMainFragment", asStarter = true)
 public class DrawerLayoutMainFragment extends Fragment
 {
     @Override

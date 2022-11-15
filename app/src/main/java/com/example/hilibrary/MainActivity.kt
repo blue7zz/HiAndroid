@@ -17,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.hilibrary.databinding.ActivityMainBinding
 import com.example.hilibrary.demo.DelayQueueDemo
 import com.example.hilibrary.navigation.BNavigationActivity
+import com.example.hilibrary.navigation.NavigationActivity
 import com.example.mylibrary.log.HILogManager
 import com.example.mylibrary.log.HiViewPrinter
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
         activityMainBinding.btnNavigation.setOnClickListener {
-            startActivity(Intent(this,BNavigationActivity::class.java))
+            startActivity(Intent(this,NavigationActivity::class.java))
         }
     }
 
