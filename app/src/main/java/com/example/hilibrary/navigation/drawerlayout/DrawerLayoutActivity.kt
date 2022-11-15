@@ -37,7 +37,6 @@ class DrawerLayoutActivity:AppCompatActivity() {
         var navigationView = dataBinding.navigationView
         //绑定左侧回退按钮，堆栈
         NavigationUI.setupWithNavController(navigationView,navController)
-
         navController.addOnDestinationChangedListener { _, _, _ ->
             Toast.makeText(
                 this@DrawerLayoutActivity,

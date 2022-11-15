@@ -23,10 +23,13 @@ class MenuActivity:AppCompatActivity() {
         dataBinding = ActivityMenuBinding.inflate(layoutInflater);
         setContentView(dataBinding.root)
         //找到controller
+
+
         var navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         //绑定当前的ActionBar，除此之外NavigationUI还能绑定Toolbar和CollapsingToolbarLayout
         //绑定后，系统会默认处理ActionBar左上角区域，为你添加返回按钮，将所切换到的Fragment在导航图里的name属性中的内容显示到Title
         appBarConfiguration = AppBarConfiguration.Builder(navController.graph).build()
+
         NavigationUI.setupActionBarWithNavController(this,navController,appBarConfiguration);
 
         navController.addOnDestinationChangedListener { _, _, _ ->
