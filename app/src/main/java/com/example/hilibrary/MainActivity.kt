@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.alibaba.android.arouter.launcher.ARouter
 import com.example.hilibrary.databinding.ActivityMainBinding
 import com.example.hilibrary.demo.DelayQueueDemo
 import com.example.hilibrary.navigation.BNavigationActivity
@@ -24,7 +25,6 @@ import com.example.mylibrary.log.HiViewPrinter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-
 class MainActivity : AppCompatActivity() {
     lateinit var activityMainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,10 +32,14 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
         activityMainBinding.btnNavigation.setOnClickListener {
-            startActivity(Intent(this,NavigationActivity::class.java))
+            startActivity(Intent(this, NavigationActivity::class.java))
         }
         activityMainBinding.btnAnnotation.setOnClickListener {
-            startActivity(Intent(this,AnnotationActivity::class.java))
+            startActivity(Intent(this, AnnotationActivity::class.java))
+        }
+
+        activityMainBinding.btnARouter.setOnClickListener {
+            ARouter.getInstance().build("/main/main/arouteractivity").navigation()
         }
 
     }
