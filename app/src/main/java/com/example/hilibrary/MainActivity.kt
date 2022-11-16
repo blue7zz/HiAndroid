@@ -39,7 +39,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         activityMainBinding.btnARouter.setOnClickListener {
-            ARouter.getInstance().build("/main/main/arouteractivity").navigation()
+            ARouter.getInstance().build("/main/main/arouteractivity")
+                .withString("saleId", "setSaleId")
+                .withString("shopId", "setShopId")
+                .navigation()
         }
 
     }
