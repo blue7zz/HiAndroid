@@ -18,6 +18,7 @@ import com.example.hilibrary.databinding.ActivityMainBinding
 import com.example.hilibrary.demo.DelayQueueDemo
 import com.example.hilibrary.navigation.BNavigationActivity
 import com.example.hilibrary.navigation.NavigationActivity
+import com.example.hilibrary.processor.AnnotationActivity
 import com.example.mylibrary.log.HILogManager
 import com.example.mylibrary.log.HiViewPrinter
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.btnNavigation.setOnClickListener {
             startActivity(Intent(this,NavigationActivity::class.java))
         }
+        activityMainBinding.btnAnnotation.setOnClickListener {
+            startActivity(Intent(this,AnnotationActivity::class.java))
+        }
+
     }
 
 
@@ -42,7 +47,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
     }
 
 

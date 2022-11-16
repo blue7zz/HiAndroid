@@ -70,6 +70,7 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.2.68'
 
     api project(':nav-annotation')
+    api project(':my_annotation')
     kapt project(':nav-compiler')
     annotationProcessor project(':nav-compiler')
 }
