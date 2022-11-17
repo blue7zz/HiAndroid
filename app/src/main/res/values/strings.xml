@@ -14,4 +14,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="trade_moudle">交易模块</string>
+    <string name="user_module">用户模块</string>
 </resources>

@@ -24,6 +24,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
     }
 
     buildTypes {
@@ -77,10 +83,10 @@ dependencies {
 
     api project(':nav-annotation')
     api project(':my_annotation')
+    api project(':module_trade')
+    api project(':module_user')
     kapt project(':nav-compiler')
     annotationProcessor project(':nav-compiler')
-
-
 
     implementation "com.alibaba:arouter-api:1.5.2"
     kapt "com.alibaba:arouter-compiler:1.5.2"

@@ -10,13 +10,9 @@ import com.example.hilibrary.databinding.ActivityArouterBinding
 
 @Route(path = "/main/main/arouteractivity", group = "main")
 class ARouterActivity : AppCompatActivity() {
-
-
     @JvmField
     @Autowired
     var saleId: String? = null
-
-
     @JvmField
     @Autowired
     var shopId: String? = null
@@ -29,6 +25,13 @@ class ARouterActivity : AppCompatActivity() {
         dataBinding = ActivityArouterBinding.inflate(layoutInflater)
         setContentView(dataBinding.root)
 
+        dataBinding.btnTrade.setOnClickListener {
+            ARouter.getInstance().build("/trade/tradeactivity").navigation();
+        }
+
+        dataBinding.btnUser.setOnClickListener {
+            ARouter.getInstance().build("/user/useractivity").navigation();
+        }
         dataBinding.tvText.text = "saleId:$saleId- shopId:$shopId"
 
     }

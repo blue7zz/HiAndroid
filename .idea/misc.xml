@@ -25,6 +25,8 @@
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/menu/menu_nav_drawer.xml" value="0.35" />
         <entry key="app/src/main/res/menu/menu_settings.xml" value="0.35" />
+        <entry key="module_trade/src/main/res/layout/activity_trade.xml" value="0.20108695652173914" />
+        <entry key="module_user/src/main/res/layout/activity_user.xml" value="0.264945652173913" />
       </map>
     </option>
   </component>

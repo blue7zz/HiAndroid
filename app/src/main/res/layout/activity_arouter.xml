@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".arouter.ARouterActivity">
 
+
+    <Button
+        android:id="@+id/btn_trade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/trade_moudle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </Button>
+
+    <Button
+        android:id="@+id/btn_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_module"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_trade" />
+
     <TextView
         android:id="@+id/tv_text"
         android:layout_width="wrap_content"
