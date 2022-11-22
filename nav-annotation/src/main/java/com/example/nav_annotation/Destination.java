@@ -7,7 +7,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface Destination {
 
-
     /**
      * 页面在路由中的名称
      *

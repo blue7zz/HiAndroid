@@ -15,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.alibaba.android.arouter.launcher.ARouter
+import com.example.hilibrary.annotation.SourceAnnotation
 import com.example.hilibrary.databinding.ActivityMainBinding
 import com.example.hilibrary.demo.DelayQueueDemo
 import com.example.hilibrary.navigation.BNavigationActivity
@@ -44,6 +45,13 @@ class MainActivity : AppCompatActivity() {
                 .withString("shopId", "setShopId")
                 .navigation()
         }
+
+
+        //Error:
+        // Must be one of: SourceAnnotation.STATUS_OPEN, SourceAnnotation.STATUS_CLOSE
+        //SourceAnnotation.setStatus(1);
+
+        SourceAnnotation.setStatus(SourceAnnotation.STATUS_OPEN)
 
     }
 

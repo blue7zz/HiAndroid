@@ -13,6 +13,7 @@ public class AnnotationProcessor {
         //
         Constructor[] constructors = object.getClass().getDeclaredConstructors();
         for (Constructor constructor : constructors) {
+
             MyRunTimeAnnotation useFill = (MyRunTimeAnnotation) constructor.getAnnotation(MyRunTimeAnnotation.class);
             int age = useFill.age();
             int id = useFill.id();

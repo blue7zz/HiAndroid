@@ -17,7 +17,7 @@ class TradeActivity : AppCompatActivity() {
 
 
         findViewById<Button>(R.id.button).setOnClickListener {
-            ARouter.getInstance().build("/user/useractivity").navigation()
+            ARouter.getInstance().build("/trade/tradeactivity").navigation()
         }
 
     }

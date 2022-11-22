@@ -13,8 +13,15 @@ import java.lang.annotation.Target;
 @Documented
 @Target(ElementType.CONSTRUCTOR)
 @Retention(RetentionPolicy.RUNTIME) //运行时注解
-public @interface MyRunTimeAnnotation {
+public  @interface  MyRunTimeAnnotation {
     public int id() default 0;
     public String name() default "";
     public int age() default 0;
+}
+
+
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.CLASS)
+@interface ClassRuntimeAnnotation{
+    int id() default 0;
 }

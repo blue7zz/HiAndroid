@@ -43,16 +43,15 @@ import javax.tools.StandardLocation;
  * Processor.getSupportedAnnotationTypes() 方法可以根据此注释的值构造它的结果，正如 AbstractProcessor.getSupportedAnnotationTypes() 所做的一样。
  * 只有符合语法的字符串才应该作为值来使用。
  */
-@AutoService(Processor.class) //TODO 这个还清楚
+@AutoService(Processor.class) //自定义注解处理器注册才能被Java虚拟机调用 这个是自动注册
 @SupportedSourceVersion(SourceVersion.RELEASE_8) //支持java 1.8版本
-@SupportedAnnotationTypes("com.example.nav_annotation.Destination")
+@SupportedAnnotationTypes("com.example.nav_annotation.Destination") //对应注解类
 public class NavProcessor extends AbstractProcessor {
 
     private static final String PAGE_TYPE_ACTIVITY = "Activity";
     private static final String PAGE_TYPE_FRAGMENT = "Fragment";
     private static final String PAGE_TYPE_DIALOG = "Dialog";
     private static final String OUTPUT_FILE_NAME = "destination.json";
-
 
     private Messager messager;
     private Filer filer;
