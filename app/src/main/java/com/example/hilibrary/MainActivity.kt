@@ -47,6 +47,10 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        activityMainBinding.btnRecyclerview.setOnClickListener {
+            ARouter.getInstance().build("/recycler/recyclerViewActivity").navigation()
+        }
+
         //Error:
         // Must be one of: SourceAnnotation.STATUS_OPEN, SourceAnnotation.STATUS_CLOSE
         //SourceAnnotation.setStatus(1);

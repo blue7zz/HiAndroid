@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hilibrary">
         <activity
+            android:name=".recyclerview.RecyclerViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".arouter.ARouterActivity"
             android:exported="false" />
         <activity
