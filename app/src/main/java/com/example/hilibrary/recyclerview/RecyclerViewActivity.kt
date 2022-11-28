@@ -10,7 +10,6 @@ import com.example.hilibrary.recyclerview.adapter.MyRecyclerViewAdapter
 
 @Route(path = "/recycler/recyclerViewActivity", group = "recycler")
 class RecyclerViewActivity : AppCompatActivity() {
-
     var dataList = mockDataSets();
 
     lateinit var dataBinding: ActivityRecyclerViewBinding
@@ -26,9 +25,8 @@ class RecyclerViewActivity : AppCompatActivity() {
             }
         }
         dataBinding.recyclerView.layoutManager = gridLayoutManager;
-
-
     }
+
 
     private fun mockDataSets(): MutableList<ItemData> {
         val dataList: MutableList<ItemData> = ArrayList()
@@ -42,5 +40,20 @@ class RecyclerViewActivity : AppCompatActivity() {
             dataList.add(itemData)
         }
         return dataList
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        other as RecyclerViewActivity
+        if (dataList != other.dataList) return false
+        if (dataBinding != other.dataBinding) return false
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = dataList.hashCode()
+        result = 31 * result + dataBinding.hashCode()
+        return result
     }
 }
