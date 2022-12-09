@@ -10,18 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hilibrary.R
 import com.example.hilibrary.recyclerview.ItemData
 
-class MyRecyclerViewAdapter : RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> {
-    lateinit var mInflater: LayoutInflater
-    lateinit var context: Context
-    lateinit var dataSets: MutableList<ItemData>;
-
-
-    constructor(context: Context, dataSets: MutableList<ItemData>) {
-        this.context = context
-        this.dataSets = dataSets;
-        mInflater = LayoutInflater.from(context);
-
-    }
+class MyRecyclerViewAdapter(
+     var context: Context,
+     var dataSets: MutableList<ItemData>
+) : RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder>() {
+    var mInflater: LayoutInflater = LayoutInflater.from(context)
 
     override fun getItemViewType(position: Int): Int {
         return dataSets[position].itemType
@@ -61,7 +54,6 @@ class MyRecyclerViewAdapter : RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewH
      * 绑定数据
      */
     override fun onBindViewHolder(holder: MyRecyclerViewAdapter.MyViewHolder, position: Int) {
-
         var itemData = dataSets[position]
         when (itemData.itemType) {
             ItemData.TYPE_TOP_TAB -> holder.imageView?.setImageResource(R.drawable.item_top_tab)
@@ -72,7 +64,6 @@ class MyRecyclerViewAdapter : RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewH
             ItemData.TYPE_VIDEO -> holder.imageView?.setImageResource(R.drawable.item_video)
             ItemData.TYPE_IMAGE -> holder.imageView?.setImageResource(R.drawable.item_image)
         }
-
     }
 
     override fun getItemCount(): Int {
@@ -84,12 +75,9 @@ class MyRecyclerViewAdapter : RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewH
     //2: 在类上 class MyViewHolder(itemView:View) :RecyclerView.ViewHolder(itemView)
     class MyViewHolder : RecyclerView.ViewHolder {
         var imageView: ImageView? = null
-
         constructor(itemView: View) : super(itemView) {
             imageView = itemView.findViewById(R.id.item_image)
         }
-
-
     }
 
 

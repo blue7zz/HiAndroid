@@ -34,7 +34,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_annotation" />
 
-
     <Button
         android:id="@+id/btn_recyclerview"
         android:layout_width="0dp"
@@ -43,6 +42,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_a_router" />
+
+    <Button
+        android:id="@+id/btn_gray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="灰色状态"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_recyclerview" />
+
+
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="灰色状态"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_gray" />
+
+  <Button
+        android:id="@+id/btn_okhttp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="OkHttp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_view" />
+
 
 
 

@@ -1,5 +1,7 @@
 package com.example.hilibrary;
 
+import android.view.ViewGroup;
+
 public class Log {
 
     public static void info(String ...x){

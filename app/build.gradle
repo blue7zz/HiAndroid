@@ -80,6 +80,8 @@ dependencies {
     // Jetpack Compose Integration
     implementation "androidx.navigation:navigation-compose:$nav_version"
     implementation 'com.alibaba:fastjson:1.2.68'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'com.squareup.okio:okio:1.7.0'
 
     api project(':nav-annotation')
     api project(':my_annotation')

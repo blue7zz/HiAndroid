@@ -29,7 +29,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
 
     private fun mockDataSets(): MutableList<ItemData> {
-        val dataList: MutableList<ItemData> = ArrayList()
+        val dataList: MutableList<ItemData> = mutableListOf()
         for (index in 0..19) {
             val itemData = ItemData()
             if (index < 6) {

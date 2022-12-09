@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewActivity">
+
+    <!--    <com.example.hilibrary.view.MyView-->
+    <!--        android:id="@+id/v_my"-->
+    <!--        android:text="123123"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="500dp"-->
+    <!--        android:background="@color/teal_200"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--    </com.example.hilibrary.view.MyView>-->
+
+    <!--    <com.example.hilibrary.view.InvalidTextView-->
+    <!--        android:id="@+id/invalidTextView"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:background="@color/teal_200"-->
+    <!--        android:text="哈哈哈"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"></com.example.hilibrary.view.InvalidTextView>-->
+
+    <!--    <com.example.hilibrary.view.RectView-->
+    <!--        android:id="@+id/v_rect"-->
+    <!--        android:padding="20dp"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        app:rect_color="@color/black"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:background="@color/teal_200"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/invalidTextView">-->
+
+    <!--    </com.example.hilibrary.view.RectView>-->
+
+
+    <com.example.hilibrary.view.HorizontalView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/lv_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+        <ListView
+            android:id="@+id/lv_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+    </com.example.hilibrary.view.HorizontalView>
+
+    <Button
+        android:id="@+id/btn_move_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="移动MyView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.hilibrary.deal;
 
 
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -105,6 +106,7 @@ public class Deal {
         this.serviceCharge = serviceCharge;
         this.simulateCount = simulateCount;
         this.serviceChargeSum = serviceChargeSum;
+
     }
 
 
